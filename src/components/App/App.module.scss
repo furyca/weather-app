@@ -1,0 +1,78 @@
+body {
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #38efdd;
+  background: linear-gradient(#0c99bc 0%, #24cdf7 30%, #c2f3ff 100%);
+
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+footer {
+  background-color: #238aff;
+  height: 100px;
+  border-top: 2px solid #1e79e1;
+  margin-top: 20px;
+}
+
+header {
+  background-color: #38efdd;
+  background: linear-gradient(#1999b9 0%, #1389a7 100%);
+  box-shadow: 0 5px 5px #406792;
+  border-radius: 5px;
+
+  h1 {
+    text-shadow: 2px 2px 2px #212121;
+    color: aliceblue;
+  }  
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  height: 80px;
+  width: 80%;
+}
+
+@media only screen and (max-width: 1400px) {
+  .container {
+    width: 90%;
+  }
+}

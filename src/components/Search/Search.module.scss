@@ -1,0 +1,42 @@
+.search {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+
+  button {
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffff00;
+    padding: 10px 20px;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0px 0px 10px #1fb6e8;
+      scale: 1.1;
+    }
+  }
+
+  input {
+    text-align: center;
+    width: 50%;
+    margin-right: 20px;
+    border-radius: 10px;
+    background-color: #f0f8ff5e;
+    border: 2px solid #0000005e;
+    box-shadow: 0px 0px 4px rgb(19, 61, 57);
+
+    &:focus-visible {
+      outline: unset;
+      box-shadow: 0 0 10px black;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .search {
+    input {
+      width: 65%;
+      margin-right: 10px;
+    }
+  }
+}

@@ -1,0 +1,136 @@
+li {
+  background-color: #bfd4e6;
+  border-radius: 10px;
+  border-bottom: 3px solid gray;
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: 5px;
+  padding: 0 20px;
+}
+
+.main, .leftSide, .rightSide {
+  display: flex;
+  align-items: center;
+}
+
+.main {
+  justify-content: space-between;
+}
+
+.leftSide {
+  justify-content: space-evenly;
+  width: 30%;
+}
+
+.rightSide {
+  justify-content: space-around;
+  width: 70%;
+}
+
+.marginLeft10 {
+  margin-left: 10px;
+}
+
+.marginRight10 {
+  margin-right: 10px;
+}
+
+.marginRight25 {
+  margin-right: 25px;
+}
+
+.marginVertical {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.divisionBorder {
+  border-bottom: 2px solid gray;
+}
+
+.dayTemp, .condition {
+  color: #282828;
+  font-weight: bold;
+}
+
+.dayTemp {
+  font-size: 1.5rem;
+}
+
+.conditionContainer {
+  margin: 10px 40px;
+  text-align: center;
+}
+
+.iconColor {
+  color: #3e6ec1;
+}
+
+.detailsContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  padding: 5px;
+
+  div {
+    padding: 10px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  div:not(:last-child) {
+    border-right: 2px solid #373737;
+    border-radius: 2px;
+  }
+  
+  p {
+    color: #2c2c2c;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .main {
+    justify-content: space-between;
+  }
+  
+  .leftSide {
+    justify-content: space-evenly;
+    width: 100%;
+  }
+  
+  .rightSide {
+    display:none;
+  }
+  .detailsContainer {
+    grid-template-columns: repeat(1, 1fr);
+    
+    div {
+      padding: 10px 0;
+    }
+    div:not(:last-child) {
+      border-right: none;
+    }
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1200px) {
+  .detailsContainer {
+    grid-template-columns: repeat(2, 1fr);
+    
+    div {
+      padding: 15px;
+    }
+    div:not(:last-child) {
+      border-right: none;
+    }
+  }
+}

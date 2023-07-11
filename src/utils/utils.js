@@ -10,7 +10,7 @@ export const getWeather = createAsyncThunk("getWeather", async (location) => {
 
 export const getLocation = createAsyncThunk("getLocation", async (text) => {
   const res = await fetch(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${text}&limit=5&appid=${process.env.REACT_APP_API_KEY}`
+    `https://api.openweathermap.org/geo/1.0/direct?q=${text}&limit=5&appid=${process.env.REACT_APP_API_KEY}`
   );
 
   return await res.json();

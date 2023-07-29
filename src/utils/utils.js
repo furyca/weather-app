@@ -1,19 +1,26 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
 export const getWeather = createAsyncThunk("getWeather", async (location) => {
-  const res = await fetch(
-    `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${process.env.REACT_APP_API_KEY}&units=metric`
-  );
+  try {
+    const response = await axios.get(
+      `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${process.env.REACT_APP_API_KEY}&units=metric`
+    )    
 
-  return await res.json();
+    return response.data;
+  }
+  //prevent the api key exposal
+  catch (error) {
+    error.response?.status === 404 && console.clear();
+  }
 });
 
 export const getLocation = createAsyncThunk("getLocation", async (text) => {
-  const res = await fetch(
+  const response = await axios.get(
     `https://api.openweathermap.org/geo/1.0/direct?q=${text}&limit=5&appid=${process.env.REACT_APP_API_KEY}`
-  );
+  )
 
-  return await res.json();
+  return response.data;
 });
 
 //Fontawesome rotation include only 0, 90, 180 and 270

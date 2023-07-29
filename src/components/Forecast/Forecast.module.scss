@@ -1,6 +1,6 @@
 li {
-  background-color: #bfd4e6;
-  border-radius: 10px;
+  background-color: #cbdceb;
+  border-radius: 6px;
   border-bottom: 3px solid gray;
   cursor: pointer;
   user-select: none;
@@ -8,7 +8,9 @@ li {
   padding: 0 20px;
 }
 
-.main, .leftSide, .rightSide {
+.main,
+.leftSide,
+.rightSide {
   display: flex;
   align-items: center;
 }
@@ -53,7 +55,8 @@ li {
   border-bottom: 2px solid gray;
 }
 
-.dayTemp, .condition {
+.dayTemp,
+.condition {
   color: #282828;
   font-weight: bold;
 }
@@ -88,7 +91,7 @@ li {
     border-right: 2px solid #373737;
     border-radius: 2px;
   }
-  
+
   p {
     color: #2c2c2c;
     display: flex;
@@ -96,23 +99,22 @@ li {
   }
 }
 
-
 @media only screen and (max-width: 768px) {
   .main {
     justify-content: space-between;
   }
-  
+
   .leftSide {
     justify-content: space-evenly;
     width: 100%;
   }
-  
+
   .rightSide {
-    display:none;
+    display: none;
   }
   .detailsContainer {
     grid-template-columns: repeat(1, 1fr);
-    
+
     div {
       padding: 10px 0;
     }
@@ -125,7 +127,7 @@ li {
 @media only screen and (min-width: 769px) and (max-width: 1200px) {
   .detailsContainer {
     grid-template-columns: repeat(2, 1fr);
-    
+
     div {
       padding: 15px;
     }

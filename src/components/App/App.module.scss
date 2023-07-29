@@ -1,13 +1,10 @@
 body {
   line-height: 1.5;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #38efdd;
-  background: linear-gradient(#0c99bc 0%, #24cdf7 30%, #c2f3ff 100%);
-
+  background: linear-gradient( #63bdf0 0%, #529bc4 100%);
 }
 
 *, *::before, *::after {
@@ -42,6 +39,7 @@ p, h1, h2, h3, h4, h5, h6 {
 .container {
   width: 80%;
   margin: 0 auto;
+  padding-bottom: 60px;
 }
 
 footer {
@@ -52,9 +50,7 @@ footer {
 }
 
 header {
-  background-color: #38efdd;
-  background: linear-gradient(#1999b9 0%, #1389a7 100%);
-  box-shadow: 0 5px 5px #406792;
+  background: transparent;
   border-radius: 5px;
 
   h1 {

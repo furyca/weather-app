@@ -28,36 +28,32 @@ export const weatherSlice = createSlice({
     },
     otherDays: [],
   },
-  reducers: {
-    changeLocation: (state, action) => {
-      state.location = action.payload;
-    },
-  },
   extraReducers: {
-    [getWeather.fulfilled]: (state, action) => {      
-      const latest = action.payload.list[0]
-      state.otherDays = action.payload.list
-      state.otherDays.shift()
-
-      state.latestData.date = `${new Date(latest.dt_txt).toLocaleString("en-US", {month: 'long', weekday: 'long', day:'numeric'})} - ${latest.dt_txt.slice(-8, -3)}`
-      state.latestData.clouds = latest.clouds.all
-      state.latestData.feelsLike = latest.main.feels_like
-      state.latestData.humidity = latest.main.humidity
-      state.latestData.pressure = latest.main.pressure
-      state.latestData.temperature = Math.ceil(latest.main.temp)
-      state.latestData.maxTemp = latest.main.temp_max
-      state.latestData.minTemp = latest.main.temp_min
-      state.latestData.condition = latest.weather[0].main
-      state.latestData.icon = `https://openweathermap.org/img/wn/${latest.weather[0].icon}@2x.png`
-      state.latestData.description = latest.weather[0].description
-      state.latestData.windDegree = latest.wind.deg
-      state.latestData.windSpeed = latest.wind.speed
-      state.latestData.precipitation = Math.ceil(latest.pop*100)
+    [getWeather.fulfilled]: (state, action) => {
+      if (action.payload) {
+        const latest = action.payload.list[0]
+        state.otherDays = action.payload.list
+        state.otherDays.shift()
+  
+        state.latestData.date = `${new Date(latest.dt_txt).toLocaleString("en-US", {month: 'long', weekday: 'long', day:'numeric'})} - ${latest.dt_txt.slice(-8, -3)}`
+        state.latestData.clouds = latest.clouds.all
+        state.latestData.feelsLike = latest.main.feels_like
+        state.latestData.humidity = latest.main.humidity
+        state.latestData.pressure = latest.main.pressure
+        state.latestData.temperature = Math.ceil(latest.main.temp)
+        state.latestData.maxTemp = latest.main.temp_max
+        state.latestData.minTemp = latest.main.temp_min
+        state.latestData.condition = latest.weather[0].main
+        state.latestData.icon = `https://openweathermap.org/img/wn/${latest.weather[0].icon}@2x.png`
+        state.latestData.description = latest.weather[0].description
+        state.latestData.windDegree = latest.wind.deg
+        state.latestData.windSpeed = latest.wind.speed
+        state.latestData.precipitation = Math.ceil(latest.pop*100)
+      }
+      else state.location = 'London'
   },
     [getLocation.fulfilled]: (state, action) => {
-      if (action.payload.length > 0) {
-        state.location = action.payload[0].name;
-      }
+      state.location = action.payload[0].name;
     },
   },
 });

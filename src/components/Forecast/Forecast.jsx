@@ -20,7 +20,6 @@ const Forecast = ({ id }) => {
         {day}
       </h3>
       <li onClick={() => setClosed(!closed)}>
-        <div>
           <div className={`${style.main} ${closed ? '' : style.divisionBorder}`}>
             <div className={style.leftSide}>
               <p>{hour}</p>
@@ -80,7 +79,6 @@ const Forecast = ({ id }) => {
 
             </div>
           </div>
-        </div>
       </li>
 </>
   );

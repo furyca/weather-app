@@ -9,17 +9,18 @@ const Search = () => {
   const [location, setLocation] = useState('');
   const dispatch = useDispatch();
 
-  const handleClick = () => {
-    dispatch(getLocation(location))
+  const handleClick = (e) => {
+    e.preventDefault()
+    location.length > 1 && dispatch(getLocation(location))
   };
 
   return (
-    <div className={style.search}>
+    <form className={style.search}>
       <input type="text" onChange={(e) => setLocation(e.target.value)} />
-      <button onClick={handleClick}>
+      <button onClick={e => handleClick(e)}>
         <FontAwesomeIcon icon={faMagnifyingGlass} />
       </button>
-    </div>
+    </form>
   );
 };
 

@@ -4,7 +4,6 @@ import ForecastList from "../ForecastList/ForecastList";
 import Header from "../Header/Header";
 import style from './App.module.scss'
 import Search from "../Search/Search";
-import Footer from "../Footer/Footer";
 
 function App() {
   return (
@@ -16,7 +15,6 @@ function App() {
         <TodayForecast />
         <ForecastList />
       </div>
-      <Footer />
     </>
   );
 }
